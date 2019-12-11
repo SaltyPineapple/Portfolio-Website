@@ -12,7 +12,7 @@
     --pearl: #e7e0d6;
     --labColor: #697e83;
     --javaWidth: 60%;
-    --pythonWidth: 85%;
+    --pythonWidth: 75%;
     --htmlWidth: 95%;
     --cssWidth: 95%;
 }
@@ -171,6 +171,7 @@
     background-color: var(--beaver);
     width: 85%;
     margin-top: 0;
+    margin: auto;
     
 }
 
@@ -181,10 +182,9 @@
 }
 
 .languages {
-    margin-top: 20px;
-    margin-bottom: 0;
+    width: 85%;
+    margin: 20px auto 0 auto;
     text-align: left !important;
-    
 }
 
 /* ID */
@@ -420,7 +420,7 @@ html {
     
     .smallContactBox {
         height: 100%;
-        width: 60%;
+        width: 50%;
     }
     
     .socLink {
@@ -429,6 +429,10 @@ html {
 }
 
 @media only screen and (max-width: 800px){
+    
+    .smallContactBox{
+        width: 80%;
+    }
     
     /* Project Section */
     #projects {
@@ -465,6 +469,11 @@ html {
     #scroll img {
         height: 100px;
         width: 50px;
+    }
+    
+    /* About Me Section */
+    .insideAbout {
+        
     }
     
 }
