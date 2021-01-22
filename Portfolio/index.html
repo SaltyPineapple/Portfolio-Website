@@ -5,14 +5,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-        
         <!-- My CSS link -->
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         
         <!-- Fonts Links -->
-        <link href="https://fonts.googleapis.com/css?family=Asap|Montserrat|Poppins" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Asap|Montserrat|Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
         
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="images/pineapple-icon.png">
@@ -25,6 +23,20 @@
         <script>
             ScrollReveal({ reset: false });
         </script>
+        
+        <!-- JQuery Link -->
+        <script src="js/jquery-3.4.1.min.js"></script>
+        
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160161296-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-160161296-1');
+        </script>
 
 
 
@@ -32,106 +44,64 @@
     </head>
     
       <!--
-
 =====================================================
         To Do:
 
-            - JS Loader
-            - Responsiveness for everything
+            - add animation for image things in learning section
+            - change transition from hero to content (less jagged)
+          ! - FIX NAV DISAPPEAR ISSUE
+            - transition on buttons
+            
+            Down the road:
+                - Adjust mobile site accordingly
+                - clean up commented code
+
+        Things I did today:
+
+            
+            
 
     
 =====================================================
       -->    
     
     <body>
-
+        <div id="loading">
+            <img id="loading-image" src="images/loader.gif" alt="Loading..." />
+        </div>
+        
         <header>
             <div id="heroimage">
-                <div class="container">
-                    <h1>Mark Pratt</h1>   
-
-                    <nav>
-                        <ul>
-                            <li class="navitem"><a href="index.html">Home</a></li>
-                            <li class="navitem"><a href="#aboutMe">About</a></li>
-                            <li class="navitem"><a href="#myProjects">Projects</a></li>
-                            <li class="navitem"><a href="#contactMe">Connect</a></li>
-                        </ul>
+                <div class="contain" id="topNav">
+                    <h1 class="headerName" id="headerName">MARK PRATT</h1>   
+                    
+                    <nav class="navitem">
+                        <a href="#heroimage" class="button navitem">Home</a>
+                        <a href="#aboutMe" class="button navitem">About</a>
+                        <a href="#myProjects" class="button navitem">Projects</a>
+                        <a href="#contactMe" class="button navitem">Connect</a>
                     </nav>
+                    
                 </div>
                 <div id="scroll">
                     <a href="#aboutMe"><img src="images/scroll.gif"></a>
+                </div>
+                <div id="heroText">
+                    <h6>Welcome to my Portfolio</h6>
+                    <h1 id="webd">Mark Pratt</h1>
+                    <a href="https://github.com/SaltyPineapple" class="otherButtons contactTop"><i class="fas fa-code"></i> Github</a>
+                    <a href="https://www.linkedin.com/in/mark-pratt-a3b015173/" class="otherButtons contactTop"><i class="fas fa-user-circle"></i> LinkedIn</a>
                 </div>
             </div>
         </header>
 
         <main >
 
-            <div class="seperator" id="aboutMe">
-                <h2>About Me</h2>
-            </div>
-
-            <div class="content" id="about">
-
-                <div id="profile"></div>
-                
-                <div id="aboutRight">
-
-                    <div class="aboutRow" id="topText">
-                        <h2>Me Myself and I</h2>
-                        <div class="rowDivide"></div>
-                        <p>I am a student at Grand Canyon University studying to attain a Bachelors of Science in Computer Programming. I am Graduating in 2021. I currently work for Rice Insurance as a web designer, data analyst, and excel expert. I am constantly learning new things and practicing my skills.</p>
-                    </div>
-                    
-                    <div class="aboutRow">
-                        
-                        <div class="insideAbout">
-                            <h2>Proficiency</h2>
-                             <div class="rowDivide"></div>
-                            
-                            <p class="languages">HTML</p>
-                            <div class="progressBar">
-                                <div class="progressFill" id="skele"></div>
-                            </div>
-
-
-                            <p class="languages">Python</p>
-                            <div class="progressBar">
-                                <div class="progressFill" id="python"></div>
-                            </div>
-                            
-                            <p class="languages">CSS</p>
-                            <div class="progressBar">
-                                <div class="progressFill" id="css"></div>
-                            </div>
-                            
-                            <p class="languages">Java</p>
-                            <div class="progressBar">
-                                <div class="progressFill" id="java"></div>
-                            </div>
-
-                        </div>
-                        
-                        
-                        <div class="insideAbout">
-                            <h2>Experience</h2>
-                             <div class="rowDivide"></div>
-                            
-                            <br>
-                            <br>
-                            
-                            <a href="resume.txt" id="resume" download>Download Resume</a>
-                            
-                        </div>
-                    </div>
-
-                
-                </div>
-
-            </div>
+            
 
             <div class="seperator" id="myProjects">
-                <h2>My Projects</h2>
+                <h2>MY PROJECTS</h2>
+                <h5>Tap pictures to learn more</h5>
             </div>
             
             <div class="content" id="projects">      
@@ -144,12 +114,19 @@
                             
                             <p>I created a mock sports equipment store as a final project for my web design class. This project was built to showcase skills in the areas of HTML and CSS along with some PHP.</p>
                             
-                            <a href="https://csci202.us/winter19/mark/" class="button">Visit Site</a>
+                            <a class="button proj" id="sseview">View Site</a>
+                            
                             
                         </div>
                     
                     </div>
                 
+                </div>
+                
+                <div class="modal" id="sseModal">
+                    <span class="sseclose">&times;</span>
+                    <img src="images/SSEExpand.PNG" class="modal-content">
+
                 </div>
                 
                 <div class="image">
@@ -160,25 +137,30 @@
                             
                             <p>I created a website to host a database and a few other tools for Rice Insurance. In this project, I used MySQL to create the databases and PHP to join it with the webpage.</p>
                             
-                            <a href="" class="button">Visit Site</a>
+                            <a class="button proj" id="rsfview">View Site</a>
+                            
                             
                         </div>
                     
                     </div>
                 
+                </div>
+                
+                <div class="modal" id="rsfModal">
+                    <span class="rsfclose">&times;</span>
+                    <img src="images/RSFExpand.PNG" class="modal-content">
+
                 </div>
 
                 <div class="image">
                     <img src="images/project5.jpg">
                     <div class="overlay">
                         <div class="inside">
-                            <h2>Project 3</h2>
+                            <h2>Current Project</h2>
                             
-                             <p>This is one of my projects. This is where the details of the project will go. I will have to update this when I actually have a project to put here.</p>
+                             <p>I recently made the game Minesweeper in the C# / .NET Framework as a class project. Created in Visual Studio using Windows Forms Applications</p>
                             
-                            <a href="" class="button">Learn More</a>
-                            
-                            
+                            <a class="button proj" id="pr3view">Learn More</a>
                             
                         </div>
                     
@@ -186,40 +168,103 @@
                 
                 </div>
                 
+                
+                <div class="modal" id="pr3Modal">
+                    <span class="pr3close">&times;</span>
+                    <img src="images/minesweepExpand.png" class="modal-content">
+
+                </div>
+                
 
             </div>
             
-            <div class="seperator" id="contactMe">
-                <h2>Connect with Me</h2>
+            <div class="seperator" id="aboutMe">
+                <h2>ABOUT ME</h2>
             </div>
+
+            <div class="content" id="about">
+
+                <div id="profile">
+                    <div id="pic"></div>
+                </div>
+                    
+                
+                
+
+                <div id="topText">
+                    
+                    <p>I am a third year student at Grand Canyon University studying Computer Programming. I currently work for Rice Insurance as a data analyst, excel expert, and web designer. I am constantly learning new things and practicing my skills. When I am not coding, I am playing soccer, hanging out with friends, or learning how to play the piano!</p>
+                    
+                    <a href="resume.pdf" class="otherButtons" download><i class="far fa-file"></i> Download Resume</a>
+                </div>
+                
+
+            </div>
+            
+            
+            <!-- DIV for what I am learning-->
+            <div id="learning">
+                <div class="wlpr" id="learn">
+                    <i class="fas fa-graduation-cap fa-2x"></i>
+                    <h2>What I am learning</h2>
+                    <p>Database Programming</p>
+                    <p>Android Studio</p>
+                    <p>Piano and Ukulele</p>
+                </div>
+                
+                <div class="wlpr" id="work">
+                    <i class="fas fa-file-code fa-2x"></i>
+                    <h2>What I am working on</h2>
+                    <p>Mobile App Development</p>
+                    <p>Web Development</p>
+                    <p></p>
+                </div>
+                
+                <div class="wlpr" id="play">
+                    <i class="fas fa-gamepad fa-2x"></i>
+                    <h2>What I am playing</h2>
+                    <p>Rocket League</p>
+                    <p>Super Smash Bros</p>
+                    <p>Settlers of Catan</p>
+                </div>
+                
+                <div class="wlpr" id="read">
+                    <i class="fas fa-book fa-2x"></i>
+                    <h2>What I am reading</h2>
+                    <p>Cracking the Coding Interview</p>
+                    <p>Percy Jackson Series</p>
+                </div>
+            
+            </div>
+        
 
             <div class="content" id="contact">
                 
 
                 
                 <div class="smallContactBox">
-                    <h3>Email Me</h3>
+                    <h2><i class="fas fa-envelope"></i> Email Me</h2>
                     <div class="rowDivide"></div>
                     <br>
-                    <p><a href="mailto:mjpratt31@gmail.com" id="email">mjpratt31@gmail.com</a></p>
+                    <p><a id="email">mjpratt31@gmail.com</a></p>
                 </div>
 
 
 
                 <div class="smallContactBox">
-                    <h3>Social Media</h3>
+                    <h2><i class="fas fa-mobile-alt"></i> Social Media</h2>
                     <div class="rowDivide"></div>
                     <br>
-                    <a href="https://www.facebook.com/mark.pratt.12720100" class="socLink" id="facebook"><i class="fab fa-facebook-square fa-4x" aria-hidden="true"></i></a>
+                    
                     <a href="https://www.instagram.com/markjpratt31/?hl=en" class="socLink" id="instagram"><i class="fab fa-instagram fa-4x" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/markjpratt31" class="socLink" id="twitter"><i class="fab fa-twitter-square fa-4x" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/mark-pratt-a3b015173/" class="socLink"><i class="fab fa-linkedin fa-4x"></i></a>
+                    
+                    <a href="https://www.linkedin.com/in/mark-pratt-a3b015173/" class="socLink" id="linkdin"><i class="fab fa-linkedin fa-4x"></i></a>
                 </div>
 
 
 
                 <div class="smallContactBox">
-                    <h3>Github</h3>
+                    <h2><i class="fas fa-code-branch"></i> Github</h2>
                     <div class="rowDivide"></div>
                     <br>
                     <p><a href="https://github.com/SaltyPineapple" id="email">View my Github</a></p>
@@ -232,20 +277,26 @@
             
 
             <footer> 
-                <p>Web Design by MJ Designs 2019</p>
+                <p>Web Design by Mark Pratt 2020</p>
 
             </footer>
         </main>      
       
-
+        
     <!-- Optional JavaScript -->
+    <script>
+        
+        $(window).on('load',function() {
+            function hide(){
+                $('#loading').fadeOut('slow');
+            };
+            window.setTimeout(hide, 3000 );
+        });
+        
+    </script>
         
     <!-- My JS Link -->
     <script type="text/javascript" src="js/main.js"></script>    
         
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
   </body>
 </html>
