@@ -18,15 +18,8 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
         
-        <!-- Scroll Reveal -->
-        <script src="https://unpkg.com/scrollreveal"></script>
-        <script>
-            ScrollReveal({ reset: false });
-        </script>
-        
         <!-- JQuery Link -->
         <script src="js/jquery-3.4.1.min.js"></script>
-        
         
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160161296-1"></script>
@@ -47,7 +40,6 @@
 =====================================================
         To Do:
 
-            - add animation for image things in learning section
             - change transition from hero to content (less jagged)
           ! - FIX NAV DISAPPEAR ISSUE
             - transition on buttons
@@ -57,6 +49,7 @@
                 - clean up commented code
 
         Things I did today:
+            - Fixed JS not Loading
 
             
             
@@ -77,9 +70,9 @@
                     
                     <nav class="navitem">
                         <a href="#heroimage" class="button navitem">Home</a>
-                        <a href="#aboutMe" class="button navitem">About</a>
                         <a href="#myProjects" class="button navitem">Projects</a>
-                        <a href="#contactMe" class="button navitem">Connect</a>
+                        <a href="#aboutMe" class="button navitem">About</a>
+                        <a href="#contact" class="button navitem">Connect</a>
                     </nav>
                     
                 </div>
@@ -89,10 +82,12 @@
                 <div id="heroText">
                     <h6>Welcome to my Portfolio</h6>
                     <h1 id="webd">Mark Pratt</h1>
-                    <a href="https://github.com/SaltyPineapple" class="otherButtons contactTop"><i class="fas fa-code"></i> Github</a>
-                    <a href="https://www.linkedin.com/in/mark-pratt-a3b015173/" class="otherButtons contactTop"><i class="fas fa-user-circle"></i> LinkedIn</a>
+                    <a href="https://github.com/SaltyPineapple" class="otherButtons contactTop"><i class="fas fa-code icon"></i> Github</a>
+                    <a href="https://www.linkedin.com/in/mark-pratt-a3b015173/" class="otherButtons contactTop"><i class="fas fa-user-circle icon"></i> LinkedIn</a>
                 </div>
             </div>
+            
+            
         </header>
 
         <main >
@@ -130,12 +125,12 @@
                 </div>
                 
                 <div class="image">
-                    <img src="images/RSF.PNG">
+                    <img src="images/project2.jpg">
                     <div class="overlay">
                         <div class="inside">
                             <h2>Project 2</h2>
                             
-                            <p>I created a website to host a database and a few other tools for Rice Insurance. In this project, I used MySQL to create the databases and PHP to join it with the webpage.</p>
+                            <p>I created my portfolio website to showcase my previous and current projects. This site showcases my HTML/CSS capabilities along with a little bit of JavaScript.</p>
                             
                             <a class="button proj" id="rsfview">View Site</a>
                             
@@ -148,7 +143,7 @@
                 
                 <div class="modal" id="rsfModal">
                     <span class="rsfclose">&times;</span>
-                    <img src="images/RSFExpand.PNG" class="modal-content">
+                    <img src="images/portfolioExpand.png" class="modal-content">
 
                 </div>
 
@@ -158,9 +153,9 @@
                         <div class="inside">
                             <h2>Current Project</h2>
                             
-                             <p>I recently made the game Minesweeper in the C# / .NET Framework as a class project. Created in Visual Studio using Windows Forms Applications</p>
+                            <p>I am currently making the game Scrabble as a mobile application. I am using Android Studio to learn the ins and outs of Android development, and I am using Unity to get a sense of game development cycles and engines.</p>
                             
-                            <a class="button proj" id="pr3view">Learn More</a>
+                            <!-- <a class="button proj" id="pr3view"></a> -->
                             
                         </div>
                     
@@ -169,11 +164,13 @@
                 </div>
                 
                 
+<!--
                 <div class="modal" id="pr3Modal">
                     <span class="pr3close">&times;</span>
                     <img src="images/minesweepExpand.png" class="modal-content">
 
                 </div>
+-->
                 
 
             </div>
@@ -193,9 +190,9 @@
 
                 <div id="topText">
                     
-                    <p>I am a third year student at Grand Canyon University studying Computer Programming. I currently work for Rice Insurance as a data analyst, excel expert, and web designer. I am constantly learning new things and practicing my skills. When I am not coding, I am playing soccer, hanging out with friends, or learning how to play the piano!</p>
+                    <p>I am a fourth year student at Grand Canyon University studying Computer Programming. I currently work for Rice Insurance as a data analyst, excel expert, and web designer. I am constantly learning new things and practicing my skills. When I am not coding, I am playing soccer, hanging out with friends, or learning how to play the piano!</p>
                     
-                    <a href="resume.pdf" class="otherButtons" download><i class="far fa-file"></i> Download Resume</a>
+                    <a href="Mark%20Pratt%20-%20Resume.pdf" class="otherButtons" download><i class="far fa-file icon"></i> Download Resume</a>
                 </div>
                 
 
@@ -205,23 +202,23 @@
             <!-- DIV for what I am learning-->
             <div id="learning">
                 <div class="wlpr" id="learn">
-                    <i class="fas fa-graduation-cap fa-2x"></i>
+                    <i class="fas fa-graduation-cap fa-2x icon"></i>
                     <h2>What I am learning</h2>
-                    <p>Database Programming</p>
+                    <p>Enterprise Java</p>
                     <p>Android Studio</p>
                     <p>Piano and Ukulele</p>
                 </div>
                 
                 <div class="wlpr" id="work">
-                    <i class="fas fa-file-code fa-2x"></i>
+                    <i class="fas fa-file-code fa-2x icon"></i>
                     <h2>What I am working on</h2>
                     <p>Mobile App Development</p>
-                    <p>Web Development</p>
+                    <p>Game Development</p>
                     <p></p>
                 </div>
                 
                 <div class="wlpr" id="play">
-                    <i class="fas fa-gamepad fa-2x"></i>
+                    <i class="fas fa-gamepad fa-2x icon"></i>
                     <h2>What I am playing</h2>
                     <p>Rocket League</p>
                     <p>Super Smash Bros</p>
@@ -229,7 +226,7 @@
                 </div>
                 
                 <div class="wlpr" id="read">
-                    <i class="fas fa-book fa-2x"></i>
+                    <i class="fas fa-book fa-2x icon"></i>
                     <h2>What I am reading</h2>
                     <p>Cracking the Coding Interview</p>
                     <p>Percy Jackson Series</p>
@@ -277,13 +274,13 @@
             
 
             <footer> 
-                <p>Web Design by Mark Pratt 2020</p>
+                <p>Web Design by Mark Pratt 2021</p>
 
             </footer>
         </main>      
       
         
-    <!-- Optional JavaScript -->
+    <!-- Loader Function -->
     <script>
         
         $(window).on('load',function() {
@@ -294,9 +291,16 @@
         });
         
     </script>
-        
     <!-- My JS Link -->
-    <script type="text/javascript" src="js/main.js"></script>    
+    <script type="text/javascript" src="js/main.js"></script> 
+        
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal({ reset: false });
+    </script>
+    <script type="text/javascript" src="js/scrollRevealScript.js"></script>
+        
         
   </body>
 </html>

@@ -39,7 +39,6 @@
     font-family: 'Gochi Hand', cursive;
     font-size: 40px;
     font-weight: 400;
-    border-bottom: 4px solid white;
     padding-left: 5px;
     padding-right: 5px;
     float: left;
@@ -47,7 +46,9 @@
 }
 
 #heroimage {
-    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("../images/project4.jpg");
+    background: 
+        linear-gradient(to bottom right, rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("../images/project4.jpg");
+    
     background-size: cover;
     height: 110vh;  
     background-attachment: fixed;
@@ -58,12 +59,10 @@ header {
     background-color: var(--platinum);
 }
 
-
 nav {
     text-align: right;
     text-shadow: .35px .35px #000000;
-    z-index: 10000;
-    background-color:
+    /* background-color:  */
 }
 nav a{
     text-decoration: none;
@@ -185,7 +184,7 @@ nav a{
     height: 200px;
     
     display: grid;
-    grid-template-columns: 1fr, 1fr, 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: 
         'learn work play read';
     grid-gap: 10px;
@@ -203,9 +202,17 @@ nav a{
     text-shadow: .35px .35px #000000;
 }
 
+.icon {
+    transition: all .5s ease-out;
+}
+
 #learn{
     grid-area: learn;
     padding-top: 5%;
+}
+
+#learn:hover .fa-graduation-cap{
+    transform: rotateY(180deg);
 }
 
 .fa-graduation-cap {
@@ -218,6 +225,10 @@ nav a{
     padding-top: 5%;
 }
 
+#work:hover .fa-file-code{
+    transform: rotateY(180deg);
+}
+
 .fa-file-code {
     color: white;
 }
@@ -227,6 +238,10 @@ nav a{
     padding-top: 5%;
 }
 
+#play:hover .fa-gamepad {
+    transform: rotateY(180deg);   
+}
+
 .fa-gamepad {
     color: white;
 }
@@ -234,6 +249,10 @@ nav a{
 #read {
     grid-area: read;
     padding-top: 5%;
+}
+
+#read:hover .fa-book {
+    transform: rotateY(180deg);
 }
 
 .fa-book {
@@ -266,7 +285,7 @@ nav a{
 
 .image img {
     height: 100%;
-    width: auto;
+    /*width: auto;*/
     display: block;
 }
 
@@ -403,15 +422,18 @@ nav a{
     text-decoration: none;
     text-shadow: .35px .35px #000000;
     box-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 2.5px 2.5px rgba(0,0,0,0.24);
-    transition: all 1s;
     border-radius: 3px;
+    
+    transition: all .5s ease-out;
     
 }
 
-.otherButtons:hover {
-    background-image: linear-gradient(to right, var(--softblue), var(--violet));
-    animation: background-image 1s;
-    animation-fill-mode: forwards;
+
+.otherButtons:hover .fas{
+    transform: rotate(360deg);  
+}
+.otherButtons:hover .far{
+    transform: rotate(360deg);  
 }
 
 .button {
@@ -566,14 +588,20 @@ html {
         font-size: 1.5em;
     }
     
+    #heroimage {
+        height: 110vh;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
+    }
+    
     /* Loader */
-    #loading-image {
+    /* #loading-image {
         /*position: fixed;
         left: 0;
         right: 0;
-        width: 100%;*/
+        width: 100%;
     }
-    
+    */
+
     /* Contact Section */
     .smallContactBox{
         width: 80%;
@@ -585,8 +613,15 @@ html {
     /* Project Section */
     #projects {
         grid-template-columns: 1fr;
-        height: 100vh;
+        height: 100%;
+        padding-bottom: 25%;
+        grid-gap: 2%;
+
     }
+    .image {
+        height: 100%;
+    }
+    
     .image img{
         height: auto;
         width: 100%;
@@ -633,13 +668,11 @@ html {
     /* About Me Section */
     #about {
         grid-template-areas: 
-            'bio'
             'profile'
-            'prof'
-            'exp';
+            'bio';
         height: 100% !important;
         padding-top: 10px;
-        padding-bottom: 10px;
+        padding-bottom: 40px;
     }
     #profile img {
         width: 100%;
@@ -649,10 +682,21 @@ html {
     #topText{
         padding: 0;
         font-size: 16px;
+        text-align: center;
     }
     
     #myProjects h5 {
         display: block;
+    }
+    
+    #learning {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            'learn work'
+            'play read';
+        height: 100%;
+        padding-bottom: 10px;
+        
     }
     
 }
@@ -663,6 +707,24 @@ html {
     .smallContactBox p {
         font-size: 1em;
     }
+    
+    #about {
+        padding-left: 10px;
+        padding-right: 10px;
+        
+    }
+    
+    #learning {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'learn'
+            'work'
+            'play'
+            'read';
+        height: 100%;
+        
+    }
+    
     
     
     

@@ -1,3 +1,21 @@
+
+
+$(document).keydown(function(e){ 
+    if(e.which === 123){ 
+ 
+       return false; 
+ 
+    } 
+ 
+});
+
+$(document).bind("contextmenu",function(e) {  
+	e.preventDefault(); 
+ 
+});
+
+
+
 // Spartan Modal
 var ssemodal = document.getElementById("sseModal");
 var sseview = document.getElementById("sseview");
@@ -33,19 +51,19 @@ span.onclick = function() {
 // =========== //
 
 // Project Modal
-var pr3modal = document.getElementById("pr3Modal");
-var pr3view = document.getElementById("pr3view");
+// var pr3modal = document.getElementById("pr3Modal");
+// var pr3view = document.getElementById("pr3view");
 
-pr3view.onclick = function(){
-  pr3modal.style.display = "block";
+// pr3view.onclick = function(){
+//   pr3modal.style.display = "block";
   
-}
+// }
 
-var span = document.getElementsByClassName("pr3close")[0];
+// var span = document.getElementsByClassName("pr3close")[0];
 
-span.onclick = function() {
-  pr3modal.style.display = "none";
-}
+// span.onclick = function() {
+//   pr3modal.style.display = "none";
+// }
 
 
 // =================================== //
@@ -58,6 +76,7 @@ window.addEventListener('scroll', () =>{
     if(window.pageYOffset > 100){
         nav.style.background = "#3b58a1";
         document.getElementById("headerName").style.color = 'white';
+        
        
     }
     else {
@@ -67,46 +86,6 @@ window.addEventListener('scroll', () =>{
     }
 });
 
-
-// =================================== //
-
-
-// Scroll Reveal
-var slideUp = {
-    origin: 'bottom',
-    duration: 1000,
-    distance: '50px',
-    interval: 100,
-    delay: 250
-};
-
-
-var slideDown = {
-    origin: 'top',
-    duration: 1000,
-    distance: '50px',
-    interval: 100,
-    delay: 350
-    
-};
-
-var slideRight = {
-    origin: 'left',
-    duration: 1000,
-    distance: '50px',
-    interval: 100,
-    delay: 350
-};
-    
-ScrollReveal().reveal('.image', slideRight);    
-ScrollReveal().reveal('.smallContactBox', slideUp);
-ScrollReveal().reveal('.navitem', slideDown);
-ScrollReveal().reveal('.wlpr', slideUp);
-ScrollReveal().reveal('#profile', slideUp);
-ScrollReveal().reveal('.seperator h2', slideUp);
-ScrollReveal().reveal('#topText p', slideUp);
-ScrollReveal().reveal('#resume', slideUp);
-ScrollReveal().reveal(".otherButtons", slideUp);
 
 
 // =================================== //
